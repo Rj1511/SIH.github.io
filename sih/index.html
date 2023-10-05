@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <meta name ="viewport" content="width=device-width,initial-scale=1.0">
+        <title>Monitor our surrounding and save our earth</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    </head>
+    <body>
+
+        <header>
+            <a href="#" class="brand">Air and Water monitoring</a>
+            <div class="menu-btn">
+                <div id="list">
+                <li class="active"><a class="active" href="#">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="explore.html">Explore</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact-us.html">Contact</a></li>
+                </div>
+            </div>
+            <div class="navigation">
+                <div class="navigation-items">
+                    <a class="active" href="#">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="explore.html">Explore</a>
+                    <a href="gallery.html">Gallery</a>
+                    <a href="contact-us.html">Contact</a>
+                </div>
+            </div>
+        </header>
+
+        <section class="home">
+            <video class="1 video-slide active" src="nb7.mp4" autoplay muted loop></video>
+            <video class="2 video-slide" src="house_-_87134 (720p).mp4" autoplay muted loop></video>  
+            <div class="1 content active">
+                <h1>Air!<br><span>Monitoring</span></h1>
+                <p>I decided to fly through the air and live in the sunlight and enjoy life as much as I could.
+                    Read more at https://www.brainyquote.com/topics/air-quotes.</p>
+                <a href="explore.html">Read more</a>
+            </div>
+            <div class="2 content">
+                <h1>Water!<br><span>Monitoring</span></h1>
+                <p>When the well’s dry, we know the worth of water.</p>
+                <a href="explore.html">Read more</a>
+            </div>
+            
+
+        <div class="media-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/mr.rebhin_rj7/"><i class="fab fa-instagram"></i></a>
+            <a href="https://twitter.com/g_rebhin"><i class="fab fa-twitter"></i></a>
+        </div>
+        <div class="slider-navigation">
+            <div class="1 nav-btn active"></div>
+            <div class="2 nav-btn "></div>
+        </div>
+    </section>
+
+    <script type="text/javascript">
+    
+    const menuBtn= document.querySelector(".menu-btn");
+    const navigation= document.querySelector(".navigation");
+    menuBtn.addEventListener("click", ()=>{
+        if(!menuBtn.classList.contains("active")){
+                menuBtn.classList.add("active");  
+                document.getElementById("list").style.visibility = "visible";
+            
+        }else{
+                menuBtn.classList.remove("active");  
+                document.getElementById("list").style.visibility = "hidden";
+        }
+    });
+    const btns = document.querySelectorAll(".nav-btn");
+    const slides = document.querySelectorAll(".video-slide");
+    const contents = document.querySelectorAll(".content");
+
+    
+    btns.forEach((e)=>{
+        e.addEventListener("click", ()=>{
+            btns.forEach((e)=>{
+                e.classList.remove("active");
+                document
+            })
+            e.classList.add("active");
+            btns.forEach((e)=>{
+                let a = e.classList;
+                if(a.contains("active")){
+                    active_pos = a[0];
+                    console.log(active_pos)
+                    contents.forEach((ee)=>{
+                        ee.classList.remove("active")
+                        console.log(ee.classList)
+                    })
+                    slides.forEach((ee)=>{
+                        ee.classList.remove("active")
+                        console.log(ee.classList)
+                    })
+                    contents.forEach((event)=>{
+                        if(event.classList.contains(active_pos)){
+                            event.classList.add("active");
+                            console.log(event.classList)
+                        }
+                    })
+                    slides.forEach((event)=>{
+                        if(event.classList.contains(active_pos)){
+                            event.classList.add("active");
+                            console.log(event.classList)
+                        }
+                    })
+                }
+            })
+        })
+    })
+
+    
+
+    </script>
+    </body>
+</html>
